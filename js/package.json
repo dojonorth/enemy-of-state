@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "node_modules/mocha/bin/mocha --reporter nyan test"
+    "test": "node_modules/mocha/bin/mocha --reporter nyan test --recursive"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
