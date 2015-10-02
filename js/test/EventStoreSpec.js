@@ -26,4 +26,3 @@ describe('EventStore', function () {
         assert.deepEqual([1, 3, 2], quantities);
     });
 });
-
