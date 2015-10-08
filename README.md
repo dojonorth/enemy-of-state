@@ -24,15 +24,26 @@ Once you have an aggregate, you will want to pass this to a view, this may well 
 
 The last remaining question in this task is, does it handle deleted Beebs? Does it respond appropriately? (410s vs 404s?)
 
-## Task 3 - Add Beeb on front-end.
+## Further tasks
 
-activate form.
-modify event store.
-refresh?
+Depending on how you get on in the workshop, you may have time to attack more tasks / problems in this small project. They don't need to be done in order, or to any predefined spec - in fact, the implementation of each may depend on your solutions to previous tasks.
 
-where does the ID come from? keep an ID counter somewhere?
+### Add Beeb form
 
-what about server-side validation? limit chars etc.
+From a web app point of view, Beebr is currently a very static read-only site. How about adding an input to the whole thing?
+
+At its heart, with this event-focused architecture, this should be relatively straight forward:
+
+Add a form to our view
+Add a route to listen for POSTs etc
+Eventstore.save the event
+Refresh
+
+However, it does come with some other questions:
+
+Where does the ID come from? Do we keep an ID counter somewhere? Where?
+
+What about server-side validation? We might want to limit Beeb length or strip out malicious code - where does this logic take place?
 
 ## Task 4 - Add Users.
 
