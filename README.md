@@ -10,6 +10,8 @@ Looking through the code, you will hopefully see that these lists are not initia
 
 The current event aggregation naïvely only responds to BeebAdded events, now we want to make it aware of BeebDeleted events. The event should probably only consist of the event name with a payload of the ID you wish to delete.
 
-This can be exercised in two ways - first, there is our BeebStreamSpec file - probably the way to get the quickest feedback on your aggregation. And then there is the front end manifestation of this, if you add some example eventstores to the controller, you should be able to restart your node instance to see 'real life' versions of this code.
+This can be exercised in two ways - first, there is our BeebStreamSpec file - probably the way to get the quickest feedback on your aggregation. You can run these tests by running `npm test`.
+
+And then there is the front end manifestation of this, if you add some example eventstores to the controller, you should be able to restart your node instance to see 'real life' versions of this code.
 
 ## Task 2 - 
