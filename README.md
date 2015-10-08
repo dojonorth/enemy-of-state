@@ -16,9 +16,13 @@ And then there is the front end manifestation of this, if you add some example e
 
 ## Task 2 - Link to a single Beeb
 
-/tweet/:id route.
-create a new Beeb aggregate from our existing event store.
-try to make it 404 (or 410 for bonus points) for a deleted Beeb.
+The next thing we want to do is to link to a single beeb. In the routes file, you will find the commented out beginnings of a link for a single ID. 
+
+For this task, you will possibly realise that our BeebStream aggregate provides far too much information for a simple view to handle easily. It is probably that we'll need another aggregate to pass to a view which gathers only the information about a single posting.
+
+Once you have an aggregate, you will want to pass this to a view, this may well be something similar (or the same as) the index page. Don't fret too much about making it look pretty (goodness knows, we didn't).
+
+The last remaining question in this task is, does it handle deleted Beebs? Does it respond appropriately? (410s vs 404s?)
 
 ## Task 3 - Add Beeb on front-end.
 

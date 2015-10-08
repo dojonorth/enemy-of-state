@@ -13,4 +13,9 @@ router.get('/', function (req, res) {
     res.render('index', { title: 'Beebr', beebs: beebStream.toArray()});
 });
 
+/* GET beeb ID */
+//router.get('/beeb/:id', function (req, res, next) {
+//    var id = req.params.id
+//});
+
 module.exports = router;
