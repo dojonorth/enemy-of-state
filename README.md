@@ -12,6 +12,6 @@ The current event aggregation naïvely only responds to BeebAdded events, now we
 
 This can be exercised in two ways - first, there is our BeebStreamSpec file - probably the way to get the quickest feedback on your aggregation. You can run these tests by running `npm test`.
 
-And then there is the front end manifestation of this, if you add some example eventstores to the controller, you should be able to restart your node instance to see 'real life' versions of this code.
+And then there is the front end manifestation of this, if you add some example eventstores to the `EventStoreFactory`, you should be able to restart your node instance to see 'real life' versions of this code. It's a very simple hash map that matches a ?stream= query string to an event store, defaulting to an index one.
 
 ## Task 2 - 
