@@ -24,7 +24,7 @@ Once you have an aggregate, you will want to pass this to a view, this may well 
 
 The last remaining question in this task is, does it handle deleted Beebs? Does it respond appropriately? (410s vs 404s?)
 
-## Further tasks
+## Further tasks / experiments
 
 Depending on how you get on in the workshop, you may have time to attack more tasks / problems in this small project. They don't need to be done in order, or to any predefined spec - in fact, the implementation of each may depend on your solutions to previous tasks.
 
@@ -45,17 +45,22 @@ Where does the ID come from? Do we keep an ID counter somewhere? Where?
 
 What about server-side validation? We might want to limit Beeb length or strip out malicious code - where does this logic take place?
 
-## Task 4 - Add Users.
+### Users
 
-We're introducing an API change, people can now opt to allow users to Beeb non-anonymously.
+We might want to introduce an API change - people can now opt to allow users to Beeb non-anonymously.
 BeebAdded now accepts UserID as part of its data field.
 
-step a) naïvely pull this ID into the front-end, if available. Notice how we don't really need to alter any existing data, DB migrations, etc.
-step b) now create some Events for a user being added to the system, name changed, photo changed - that sort of thing.
-step c) display this extra information in the twitter stream. Maybe have the Beeb Aggregate call pass the event store through to a User Aggregat call?
+The nice thing about this architecture is that we can just attach user data to our Beebs without having to modify existing data. We can naïvely look for this information in our aggregate and have our view react to that accordingly.
 
-## Task 5 - User streams
+The events for creating / modifying this user data should be pretty straight forward - UserRegistered, PhotoAttached, etc.
 
-Show just a user's Beebs.
+Once we have User aggregates and our Beebs have aggregates associated, it just remains to add it to the view and perhaps have pre-user streams.
 
-## Task 6 - Turn off anonymous Beebing
+A further example of inherent backwards compatibility is we can turn anonymous Beebs off at aggregate level without changing any underlying data.
+
+### Anything else
+
+I don't want to limit people down one path, so any other features you want to add to these systems are absolutely fair game. Have a play, explore the dark corners of event sourcing - maybe have a look at refactoring our very dumb, first principled code into a more flexible framework.
+
+It's entirely up to you.
+
